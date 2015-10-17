@@ -5,7 +5,9 @@ var arr = [10,20,30];
 //Create a function named 'first' that is given 'arr' as the argument and  returns the first item in the given array.
 
   //Code Here
-
+function first(arr) {
+  return arr[0];
+}
 
 //Next problem
 
@@ -16,7 +18,9 @@ var arr = [40,50,60];
 
 
   //Code Here
-
+function last(arr) {
+  return arr[arr.length - 1];
+}
 
 //Next Problem
 
@@ -25,7 +29,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
   //Code Here
-
+function looper(arr) {
+  for (var i = 0; i < arr.length; i ++) {
+    alert((arr[i]));
+  }
+}
 
 //Next problem
 
@@ -35,7 +43,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 //Write a function called reversedLooper that is given letters as it's only argument and loops through the given array backwards alerting every item in the array starting at the end.
 
   //Code Here
-
+function reversedLooper(arr) {
+  for (var i = arr.length - 1; i >= 0; i--) {
+    alert(arr[i]);
+  }
+}
 
 //Next Problem
 
@@ -44,7 +56,17 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
 
   //Code Here
-
+function evenFinder(arr) {
+  var index = -1;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 1) {
+      
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+  return arr;
+}
 
 //Next problem
 
@@ -58,7 +80,21 @@ var odds = [];
 
 
   //Code Here
-
+function divider(numArr, evenArr, oddArr) {
+  var bothArray = [];
+  var index = -1;
+  for (var i = 0; i < numArr.length; i++) {
+    if (numArr[i] % 2 === 1) {
+      oddArr.push(numArr[i]);
+    }
+    else{
+      evenArr.push(numArr[i]);
+    }
+  }
+  bothArray.push(evenArr);
+  bothArray.push(oddArr);
+  return bothArray;
+}
 
 //Next Problem
 
@@ -70,7 +106,13 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above you're given a function that will return a random number between 0 and 30, and an array full of numbers. Your job is to write a function named finder that will get a random number, then loop through the array to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
-
+//-*-just need to assign return val of above function to a var (var kyle = getRandomArbitrary())...pass this val, and 'numbers' into the finder function;
+function finder(randomNum, numArray) {
+  if (numArray.indexOf(randomNum) != -1) {
+    return true;
+  }
+  else return false;
+}
 
 //Next problem
 
@@ -80,7 +122,13 @@ var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
   //Code Here
-
+function reverse(str) {
+  var revStr = "";
+  for (var i = 0; i < str.length; i++) {
+    revStr = str.charAt(i) + revStr;
+  }
+  return revStr;
+}
 
 //Next Problem
 
